@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="">텍스트 표현</a>
+    a : 요소명
+    href="" : 속성명="속성값"
+    텍스트 표현 : 화면상에 노출되는 텍스트 영역
+
+
+    <h3>리스트 항목 : ol, ul, dl</h3>
+    <h4>ol(Order List) : 순차적 목록, 블록성질 <br />
+        type 속성에는 A(알파벳 대문자), a(알파벳 소문자), I(로마숫자 대문자), i(로마숫자 소문자), 1(아라비아 숫자). 기본값 1(아라비아 숫자)<br />
+        start 속성을 통해서 최초의 시작 숫자 또는 문자를 지정할 수 있음
+
+    </h4>
+
+    <h4>입사지원 순서</h4>
+    <ol type="I" start="1">
+        <li><p>1차 면접</p></li>
+        <li>2차 면접</li>
+        <li>최종 면접</li>
+        <li>건강검진</li>
+        <li>
+            합격여부
+            <ol type="i">
+                <li>합격통보</li>
+                <li>OT</li>
+            </ol>
+        </li>
+    </ol>
+
+    <h4>ul(Unorder List) : 비순차적 목록. 블록성질<br />
+        list-style로 초기 리스트 표기를 결정할 수 있음(circle, disc, square, none). 기본은 disc
+    </h4>
+    <ul style="list-style: none;">
+        <li>바람과 함께 사라지다</li>
+        <li>엄마는 외계인</li>
+        <li>민트초코</li>
+    </ul>
+
+    <!-- 웹에서는 거의 대부분의 영역을 <ul> ~ <li>으로 사용한다. 단수인 경우는 제외 -->
+    <!-- ul과 ol 태그의 자식은 무조건 li태그만 사용할 수 있음(웹표준) -->
+
+    <h4>dl(Definition List), dt(Definition Term), dd(Definition Description)</h4>
+    <h4>UN 산하기구</h4>
+    <dl>
+        <dt>유니세프</dt>
+        <dd>유니세프는 ...</dd>
+        <dt>유네스코</dt>
+        <dd>유네스코는 ...</dd>
+    </dl>
+
+    <hr />
+
+    <h3>form 태그 : 서버의 DB와 연동시 필요한 정보를 요청(Request)/응답(Response)이 이루어지게끔 구성하는 요소의 총 부모영역으로 지정</h3>
+
+    <h4>로그인 상자 구성하기</h4>
+    <form name="login_form" action="" method="post">
+        <input type="text" placeholder="아이디 입력" maxlength="10" required><br />
+        <input type="password" placeholder="패스워드 입력" required><br />
+        <input type="submit" value="로그인">
+        <input type="reset" value="취소하기">
+    </form>
+
+    <h4>댓글 작성하기</h4>
+    <form name="review_form" action="" method="post">
+        <textarea name="review_box" id="" cols="30" rows="5" placeholder="10 ~ 100자까지 작성해 주세요" maxlength="100" minlength="10" required></textarea>
+        <input type="submit" value="리뷰작성">
+        <input type="reset" value="초기화하기">
+    </form>
+
+    <h4>회원가입</h4>
+    <form name="register_form" action="" method="post">
+        <h5>필수입력사항</h5>
+
+        <p>아이디&nbsp;<span style="color: red;">*</span></p>
+        <input name="userid" type="text" placeholder="아이디" required>&nbsp;
+        <button type="button">중복확인</button>
+
+        <p>패스워드</p>
+        <input name="userpw" type="password" placeholder="패스워드" required>
+
+        <p>패스워드 확인</p>
+        <input name="userpw_confirm" type="password" placeholder="패스워드 확인" required>
+
+        <p>이메일</p>
+        <input name="useremail" type="email" placeholder="이메일" required>
+
+        <h5>선택입력사항</h5>
+
+        <p>성별</p>
+        <input type="radio" name="gender" value="male" checked>&nbsp;남성
+        <input type="radio" name="gender" value="female">&nbsp;여성
+        <!-- 라디오버튼은 다수의 항목 중에서 하나만을 선택해야 할 때 사용. [주의사항] 반드시 name이라는 속성의 속성값이 일치해야 함 -->
+
+        <p>취미</p>
+        <input type="checkbox" name="hobby" value="swim">&nbsp;수영
+        <input type="checkbox" name="hobby" value="yoga">&nbsp;요가
+        <input type="checkbox" name="hobby" value="climbing">&nbsp;등산
+        <input type="checkbox" name="hobby" value="cycle">&nbsp;자전거
+        <input type="checkbox" name="hobby" value="board">&nbsp;롱보드
+        <!-- 체크박스는 다수 선택이 가능. name 속성과는 무관 -->
+
+        <br />
+        <input type="submit" value="회원가입">
+    </form>
+
+    <hr />
+
+    <h4>버튼의 비교</h4>
+    <input type="submit" value="전송">
+    <button type="submit">전송</button>
+    <br />
+    <input type="reset" value="초기화">
+    <button type="reset">초기화</button>
+    <br />
+    <input type="button" value="버튼">
+    <button type="button">버튼</button>
+
+
+    <h4>컬러 추출</h4>
+    <input type="color" name="import_color" id="">
+    컬러타입 : 문자(red, orange, ...) /rgb(0~255, 0~255, 0~255) / 컬러코드(#000000) => #00(red)00(green)00(blue)
+    #000000 ~ #ffffff
+
+    <div style="width: 100px; height: 100px; background-color: #f00; background-color: rgb(255, 0, 0);" ></div>
+</body>
+</html>
