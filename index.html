@@ -74,6 +74,8 @@
         <input type="reset" value="초기화하기">
     </form>
 
+    <hr>
+    
     <h4>회원가입</h4>
     <form name="register_form" action="" method="post">
         <h5>필수입력사항</h5>
@@ -122,12 +124,178 @@
     <input type="button" value="버튼">
     <button type="button">버튼</button>
 
+    <hr>
 
     <h4>컬러 추출</h4>
     <input type="color" name="import_color" id="">
-    컬러타입 : 문자(red, orange, ...) /rgb(0~255, 0~255, 0~255) / 컬러코드(#000000) => #00(red)00(green)00(blue)
-    #000000 ~ #ffffff
+    <!-- 
+        컬러타입 : 문자(red, orange, ...) /rgb(0~255, 0~255, 0~255) / 컬러코드(#000000) => #00(red)00(green)00(blue)
+    #000000 ~ #ffffff 
+    -->
 
     <div style="width: 100px; height: 100px; background-color: #f00; background-color: rgb(255, 0, 0);" ></div>
+
+    <hr>
+
+    <h4>날짜 캘린더를 보여주는 입력상자</h4>
+    <input type="date" name="checkin" id="">
+    <input type="date" name="checkout" id="">
+    <input type="month" name="" id="">
+
+    <hr>
+    
+    <h4>첨부파일 기능</h4>
+    <p>하나의 파일 업로드</p>
+    <input type="file" name="upload_single">
+    <p>여러개의 파일 업로드</p>
+    <input type="file" name="upload_several" multiple>
+    
+    <hr>
+
+    <h4>각 입력상자의 이름을 지정하는 태그 : label</h4>
+    <label for="review">리뷰</label> <br/>
+    <p>사이즈 조절 가능</p> 
+    <textarea name="review_space" id="review" cols="30" rows="10" placeholder="리뷰를 작성해 주세요."></textarea>
+    <p>사이즈 조절 고정</p>
+    <textarea name="review_space" id="review" cols="30" rows="10" placeholder="리뷰를 작성해 주세요." style="resize: none;"></textarea>
+
+    <hr>
+
+    <h4>검색영역 입력상자</h4>
+    <input type="search">
+
+    <hr>
+
+    <h4>상품 고유 코드 : 일반적인 사용자에게는 알려줄 필요가 없는 경우</h4>
+    <input type="hidden" value="sd00-123">
+
+    <br>
+
+    <h4>상품 수량</h4>
+    <input type="number" name="product_num">
+
+    <hr>
+
+    <h3>선택상자</h3>
+    <h4>지역선택</h4>
+    <select name="select_address" id="">
+        <optgroup label="강남구">
+            <option value="대치동">대치동</option>
+            <option value="논현동">논현동</option>
+            <option value="도곡동">도곡동</option>    
+        </optgroup>
+        <optgroup label="서초구">
+            <option value="방배동">방배동</option>
+            <option value="서초동">서초동</option>
+            <option value="반포동">반포동</option>
+        </optgroup>
+    </select>
+
+    <br>
+
+    <h4>datalist 활용</h4>    
+    <label for="disney_choice">디즈니 영화 선택하기</label>
+    <input type="text" list="disney_favor" id="disney_choice"/>
+    <datalist id="disney_favor">
+        <option value="겨울왕국">겨울왕국</option>
+        <option value="라푼젤">라푼젤</option>
+        <option value="위시">위시</option>
+    </datalist>
+
+    <hr>
+    <hr>
+
+
+    <p>시멘틱 태그</p>
+    <div style="width: 100%; height: 100px;background-color: #aff;">header</div>
+    <header style="width: 100%; height: 100px;background-color: #a9f;">header</header>
+
+    <div style="width: 100%; height: 180px; background-color: #f9f;">content</div>
+    <section style="width: 100%; height: 180px; background-color: #f99;">content</section>
+    <article style="width: 100%; height: 180px; background-color: #f91;">content</article>
+
+    <footer style="width: 100%; height: 50px; background-color: #dedede;">footer</footer>
+
+    div -> header, nav, section, article, main, aside, footer
+    header -> nav
+    main(h1~h6 타이틀 텍스트를 동반시켜야함) -> section -> article, aside
+
+   <pre>
+     <code>
+        <h4>페이지 레이아웃</h4>
+        <header>
+            로고
+            <nav>
+                메뉴
+                <ul>
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <article>
+                    <div></div>
+                </article>
+                <article></article>
+            </section>
+            <section>
+                <article></article>
+            </section>
+            <section></section>
+        </main>
+        <footer>
+            <address></address>
+        </footer> 
+    </code>
+    </pre>
+
+    <hr>
+
+    <h3>멀티미디어</h3>
+    <h4>video tag를 활용한 저장된 영상 가져오기</h4>
+    <video loop muted autoplay playsinline>
+        <source type="video/mp4" src="./contents/video1.mp4">
+        <!-- 비디오 지원이 안될 경우를 대비 텍스트 출력 -->
+        Your Browser in not supported. 
+    </video>    
+
+    <hr>
+
+    <video loop muted autoplay playsinline src="./contents/video1.mp4"></video>
+
+    <h4>비디오 태그를 구성하는 속성들</h4>
+    <p>source라는 태그를 활용하여 영상의 형식을 다양하게 가져올 수 있다.</p>
+    <ol>
+        <li>loop : 반복재생(영상이 끝나도 자동재생)</li>
+        <li>muted : 음소거모드</li>
+        <li>controls : 재생버튼(제어)</li>
+        <li>autoplay : 브라우저가 로딩된 후 영상이 자동재생</li>
+        <li>playsinline : IOS는 버전 호환성상 autoplay가 안될 수도 있어서 같이 사용</li>
+    </ol>
+
+    <h4>유투브 영상 가져오기</h4>
+    <p>?rel=0&autoplay=1&loop=1;playlist=M_l1IjV-Ycw&mute=1;&controls=0; : 속성설정</p>
+    <p>playlist 값 = embed/"..."  </p>
+    <iframe 
+        width="464" 
+        height="825" 
+        src="https://www.youtube.com/embed/uf_2_gTrGP0?rel=0&autoplay=1&loop=1;playlist=uf_2_gTrGP0&mute=1;&controls=0;" 
+        title="집사에게 까불지 말라고 말하는 고양이 #shorts" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+    
+    <h4>음성 파일 재생하기</h4>
+    <div>
+        <audio autoplay controls loop playsinline src="./contents//aud_03.mp3"></audio>
+    </div>
+
+
+
+
+
 </body>
 </html>
